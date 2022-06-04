@@ -1,8 +1,8 @@
 count = 0
 sum_x = 0
 min = None
-max = 0
-arithm_mean = 0
+max = None
+arithmetic_mean = 0
 
 while True:
     x = input("Введіть числа: ")
@@ -11,15 +11,15 @@ while True:
         print("Сума введених чисел = ", sum_x)
         print("Мінімальне введене число: ", min)
         print("Максимальне введене число: ", max)
-        print("Середнє значення введених чисел = ", sum_x / count)
+        print("Середнє значення введених чисел = ", arithmetic_mean)
         break
 
     num = int(x)
-    sum_x += num
     count += 1
-    arithm_mean = int(sum_x / count)
+    sum_x += num
+    arithmetic_mean = int(sum_x / count)
 
-    if num > max:
+    if max is None or num > max:
         max = num
     if min is None or num < min:
         min = num
